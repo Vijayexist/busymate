@@ -10,7 +10,9 @@
 <link href="${bootstrapCss}" rel="stylesheet" />
 <link href="${coreCss}" rel="stylesheet" />
 </head>
- 
+ <%
+ String error=request.getParameter("error");
+ %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
 	<div class="navbar-header">
@@ -37,16 +39,16 @@
 	</div>
 </div> --%>
 <form name='loginForm'
-		  action="/nSpringSecurityHelloWorld/<c:url value='j_spring_security_check' />" method='POST'>
+		  action="/bizmate/<c:url value='j_spring_security_check' />" method='POST'>
  
 <div class="container">
- 
+ <%=error %>
   <div class="row">
 	<div class="col-md-2">
 	User Name
 	</div>
 	<div class="col-md-4">
-	<input type="text" name="username" value="mkyong" />
+	<input type="text" name="username" value="1" />
 	</div>
 	 </div>
 	 
@@ -55,7 +57,7 @@
 	Password
 	</div>
 	<div class="col-md-4">
-	<input type="password" value="123456"></input>
+	<input type="password" value="1"></input>
 	</div>
 	 </div>
 	 
@@ -71,7 +73,9 @@
 	 </form>
   <hr>
   <footer>
-	<p>&copy; Mkyong.com 2015</p>
+  est
+	<spring:url value="/includes/footer.jsp" var="coreJfs" />
+	<%@  include file="/includes/footer.jsp"%>
   </footer>
 
  

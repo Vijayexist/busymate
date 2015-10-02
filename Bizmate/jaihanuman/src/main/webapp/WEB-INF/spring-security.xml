@@ -7,21 +7,27 @@
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 <http pattern="/views/jsp/hello.jsp" security="none" >
 </http>
-	<http auto-config="true">
+	<http auto-config="true" >
 		<intercept-url pattern="/display*" access="ROLE_USER" />
 		<intercept-url pattern="/dashboard" access="ROLE_USER"/>
+		<intercept-url pattern="/views/jsp/Dashboard.jsp" access="ROLE_USER"/>
 		<form-login 
-		    login-page="/views/jsp/hello.jsp" 
-			username-parameter="username"
+		    login-page="/views/jsp/hello.jsp"  authentication-failure-url="/views/jsp/hello.jsp?error=true"
+			username-parameter="username" authentication-success-handler-ref="successhandler"
 			password-parameter="password" />
 	</http>
 	
 	<authentication-manager>
-	  <authentication-provider>
-	    <user-service>
-		<user name="mkyong" password="123456" authorities="ROLE_USER" />
-	    </user-service>
-	  </authentication-provider>
+	  <authentication-provider ref="authenticationProvider" >
+		</authentication-provider>
 	</authentication-manager>
-
+	
+	<beans:bean name="authenticationProvider" class="com.bizmate.authentication.CustomAuthenticationProvider">
+	</beans:bean>
+	
+	<beans:bean name="successhandler" class="com.bizmate.authentication.AuthenticationProcessingHandler">
+	</beans:bean>
+	
+	
+	 
 </beans:beans>

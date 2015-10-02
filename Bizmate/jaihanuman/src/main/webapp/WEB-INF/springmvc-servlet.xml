@@ -10,6 +10,7 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
 	<context:component-scan base-package="com.bizmate.web" />
 
 	<bean
