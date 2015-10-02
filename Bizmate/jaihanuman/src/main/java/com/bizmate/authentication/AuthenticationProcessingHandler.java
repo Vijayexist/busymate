@@ -19,7 +19,7 @@ public class AuthenticationProcessingHandler extends SavedRequestAwareAuthentica
 	    @Override
 	    public void onAuthenticationSuccess(HttpServletRequest request, 
 	      HttpServletResponse response, Authentication authentication) throws IOException {
-	    	 redirectStrategy.sendRedirect(request, response, "/views/jsp/Dashboard.jsp");
+	    	 redirectStrategy.sendRedirect(request, response, "/dashboard");
 	    	}
 	 
 	    }

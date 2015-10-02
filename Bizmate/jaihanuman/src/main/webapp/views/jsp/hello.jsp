@@ -13,10 +13,11 @@
  <%
  String error=request.getParameter("error");
  %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar navbar-fixed-top">
   <div class="container">
 	<div class="navbar-header">
 		<a class="navbar-brand" href="#">Bizmate</a>
+		<%@  include file="../include/header.jsp"%>
 	</div>
   </div>
 </nav>
@@ -73,12 +74,8 @@
 	 </form>
   <hr>
   <footer>
-  est
-	<spring:url value="/includes/footer.jsp" var="coreJfs" />
-	<%@  include file="/includes/footer.jsp"%>
+	<%@  include file="../include/footer.jsp"%>
   </footer>
-
- 
 <spring:url value="/resources/core/css/hello.js" var="coreJs" />
 <spring:url value="/resources/core/css/bootstrap.min.js" var="bootstrapJs" />
  
