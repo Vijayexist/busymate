@@ -49,7 +49,7 @@
 	User Name
 	</div>
 	<div class="col-md-4">
-	<input type="text" name="username" value="1" />
+	<input type="text" name="username" value="Vijay Satlawar" />
 	</div>
 	 </div>
 	 
@@ -80,8 +80,9 @@
 <spring:url value="/resources/core/css/bootstrap.min.js" var="bootstrapJs" />
  
 <script src="${coreJs}"></script>
-<script src="${bootstrapJs}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
- 
+<script src="${bootstrapJs}"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 </body>
 </html>

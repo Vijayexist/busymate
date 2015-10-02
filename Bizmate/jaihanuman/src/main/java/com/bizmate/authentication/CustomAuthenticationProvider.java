@@ -38,7 +38,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider
 		    "ROLE_ADMIN");
 		  authorities.add(userAuthority);
 		  authorities.add(adminAuthority);
-		  Authentication auth = new UsernamePasswordAuthenticationToken("1", "1", authorities);
+		  Authentication auth = new UsernamePasswordAuthenticationToken("Vijay Satlawar", "1", authorities);
           return auth;
 	}
 
