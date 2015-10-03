@@ -14,8 +14,7 @@ function resetFunction(){
 </script>
 
 </head>
-<body>
-<div>
+<body  >
 <form:form  method="post" modelAttribute="servicebean" id="ServiceForm"  ng-controller="ServiceController">
 <%-- <div>Customer Id:<form:input type="text" path="CustId"  />
 </div><br>
@@ -25,19 +24,44 @@ function resetFunction(){
 </div><br>
 <div>Customer PhoneNumber:<form:input type="text" path="CustPhNo"  />
 </div><br> --%>
-<div>Customer ID:${servicebean.cust.custId }</div><br>
-<div>Customer ID:${servicebean.cust.custName}</div><br>
-<div>Customer ID:${servicebean.cust.custAddress }</div><br>
-<div>Customer ID:${servicebean.cust.custPhoneNumber }</div><br>
-<div>Vehicle ID:${servicebean.vehicleId}
-</div><br>
-<div>ServiceRequest ID:${servicebean.serviceId}
-</div><br>
-<div>ServiceRequest ID:${servicebean.serviceId}
-</div><br>
+<div class="col-md-6">
+    <label for="reqID">Customer ID</label>
+  <div id="reqID">${servicebean.cust.custId} </div>
+</div>
+<div class="col-md-6">
+    <label for="reqID"> Vehicle ID</label>
+  <div id="reqID"><span class="glyphicon glyphicon-bed"></span> &nbsp;&nbsp;${servicebean.vehicleId }</div>
+</div>
 
-<div>ServiceDate:<form:input type="text" path="serviceDate" name="serviceDate" data-ng-model="serviceDate" />
-</div><br>
+<div class="col-md-6">
+    <label for="reqID">Customer Name</label>
+  <div id="reqID">
+  <span class="glyphicon glyphicon-user"></span>
+  ${servicebean.cust.custName} </div>
+</div>
+<div class="col-md-6">
+    <label for="reqID"> Address</label>
+  <div id="reqID"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;${servicebean.cust.custAddress} </div>
+</div>
+<div class="col-md-6">
+    <label for="reqID"> Phone Number</label>
+  <div id="reqID">
+  <span class="glyphicon glyphicon-phone-alt"></span>
+  ${servicebean.cust.custPhoneNumber }</div>
+</div>
+
+<div class="col-md-6">
+    <label for="reqID">ServiceRequest ID</label>
+  <div id="reqID">${servicebean.serviceId} </div>
+</div>
+ <div class="col-md-10">
+<label for="reqID"> ServiceDate  <span class="glyphicon glyphicon-calendar"></span>:</label>
+ <div id="reqID">
+
+ <form:input type="text" path="serviceDate" name="serviceDate" data-ng-model="serviceDate" class="form-control" size="12"  style="width:20%"/>
+ </div>
+</div>
+<br>
 <!-- <div class="row" id="exDateTime">
       <div class="col-sm-3">
         <h4>Date &amp; Time Inputs</h4>
@@ -48,11 +72,16 @@ function resetFunction(){
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
         </div></div></div> -->
-<div>Comments:<form:input type="text" path="comments" name="comments" data-ng-model="comments" />
-</div><br>
-<input type="button" value="Submit" ng-click="submitService()">
-<input type="button" value="Reset" onclick="resetFunction()">
-</form:form>
+ 
+
+ <div class="col-md-10">
+    <label for="usr">Comments:</label>
+  <form:textarea   path="comments" name="comments" data-ng-model="comments" style="width:20%" id="usr" class="form-control" cols="100" rows="3"/>
 </div>
+<div class="col-md-6" style="margin-top:15px">
+<input type="button" value="Submit" class="btn btn-info" ng-click="submitService()">
+<input type="button" value="Reset" class="btn btn-warning"  onclick="resetFunction()">
+</div>
+</form:form>
 </body>
 </html>
