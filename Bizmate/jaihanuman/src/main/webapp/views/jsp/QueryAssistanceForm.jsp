@@ -19,9 +19,6 @@
   </select>
 </div>
   <div class="form-group"> 
-  <label for="sel1s"> </label>
-    <div class="col-sm-12">
-      <button type="submit" class="btn btn-default">Submit</button>
-    </div>
+      <button type="submit" class="form-control btn btn-lg btn-primary">Submit</button>
   </div>
 </form>

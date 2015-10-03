@@ -1,15 +1,18 @@
 
-    var scotchApp = angular.module('bizmate', ['ngRoute']);
+    var scotchApp = angular.module('bizmate', ['ngRoute','ngAnimate']);
 
     // configure our routes
     scotchApp.config(function($routeProvider) {
         $routeProvider.when('/queryassistanceForm', {
             templateUrl : 'queryassistanceForm',
+            controller:'aboutController'
         }).when('/queryassistanceInlineForm',{
-        	templateUrl:'queryassistanceInlineForm'
+        	templateUrl:'queryassistanceInlineForm',
+        	controller:'aboutController'
         })
             .when('/', {
                 templateUrl : 'views/jsp/TodaysReport.jsp',
+                controller:'aboutController'
             })
 
             // route for the about page
@@ -21,10 +24,10 @@
             // route for the contact page
             .when('/feedback', {
                 templateUrl : 'feedback',
-                controller  : 'contactController'
+                controller  : 'aboutController'
             }).when('/assistance', {
                 templateUrl : 'queryassistance',
-                controller  : 'contactController'
+                controller  : 'aboutController'
             }).otherwise({
             	redirectTo:'/test'
             }
@@ -32,7 +35,7 @@
     });
 
     // create the controller and inject Angular's $scope
-    scotchApp.controller("ServiceController", ['$scope', '$http', function($scope,$http){
+    scotchApp.controller("ServiceController", ['$scope', '$http',  function($scope,$http){
     	$scope.list=[];
     	$scope.submitService= function(){
     		/*var formData= {
@@ -63,9 +66,9 @@
     }]);
 
     scotchApp.controller('aboutController', function($scope) {
-        $scope.message = 'Look! I am an about page.';
+    	$scope.pageClass = 'page-home';
     });
 
     scotchApp.controller('contactController', function($scope) {
-        $scope.message = 'Contact us! JK. This is just a demo.';
+    	$scope.pageClass = 'page-home';
     });

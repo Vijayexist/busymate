@@ -1,6 +1,1 @@
-fdf
-dsfdsf
-ds
-fds
-fd
-sfdf
+ @ All rights belong to Team Adithya.

@@ -4,7 +4,9 @@
 <body>
 
 	<div class="container">
-		<h2>Query Assistance</h2>
+	  <div class="jumbotron inverse">
+    <h2>Query Assistance</h2>      
+  </div>
 		<p></p>
 		<table class="table table-hover">
 			<thead>

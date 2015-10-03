@@ -5,13 +5,15 @@
   <title>BizMate</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../bizmate/resources/core/css/dashboard.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
           <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.js"></script>
           <script src="../../bizmate/resources/core/js/bizmateroutes.js"></script>
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bizmate/resources/core/css/dashboard.css">
 </head>
 <body>
 
@@ -45,7 +47,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><i class="fa fa-circle fa-stack-2x"></i><a href="#">Home</a></li>
+        <li ><i class="fa fa-circle fa-stack-2x"></i><a href="#"><span class="glyphicon glyphicon-home"></span> &nbsp;Home</a></li>
         <li ><a href="#">CRM</a></li>
         <li><a href="#">Data Dump</a></li>
       </ul>
@@ -53,8 +55,8 @@
     </div>
   </div>
 </nav>
-   <div class="container">
-<div ng-view></div>
+   <div class="container" id="contentDiv">
+<div class="page {{ pageClass }}" ng-view></div>
 </div>
 </body>
 </html>
