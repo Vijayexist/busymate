@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="bizmate">
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <head>
   <title>BizMate</title>
   <meta charset="utf-8">
@@ -28,10 +30,10 @@
       <a class="navbar-brand" href="#">BizMate</a>
     </div>
     <div class="collapse navbar-collapse" id="loginHeader">
-      
+      <sec:authentication var="user" property="principal" />
       <ul class="nav navbar-nav navbar-right">
-        <li class="none"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li class="none"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li class="none"><a href="#"><span class="glyphicon glyphicon-user"></span> ${user}</a></li>
+        <li class="none"><a href="<c:url value="j_spring_security_logout" />"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>

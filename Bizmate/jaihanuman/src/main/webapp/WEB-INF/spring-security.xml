@@ -10,10 +10,12 @@
 	<http auto-config="true" >
 		<intercept-url pattern="/display*" access="ROLE_USER" />
 		<intercept-url pattern="/dashboard" access="ROLE_USER"/>
+		<intercept-url pattern="*" access="ROLE_USER" />
 		<form-login 
 		    login-page="/views/jsp/login.jsp"  authentication-failure-url="/views/jsp/hello.jsp?error=true"
 			username-parameter="username" authentication-success-handler-ref="successhandler"
 			password-parameter="password" />
+			<logout logout-success-url="//views/jsp/login.jsp"/>
 	</http>
 	
 	<authentication-manager>
