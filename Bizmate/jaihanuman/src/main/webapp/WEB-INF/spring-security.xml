@@ -5,14 +5,13 @@
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
-<http pattern="/views/jsp/hello.jsp" security="none" >
+<http pattern="/views/jsp/login.jsp" security="none" >
 </http>
 	<http auto-config="true" >
 		<intercept-url pattern="/display*" access="ROLE_USER" />
 		<intercept-url pattern="/dashboard" access="ROLE_USER"/>
-		<intercept-url pattern="/views/jsp/Dashboard.jsp" access="ROLE_USER"/>
 		<form-login 
-		    login-page="/views/jsp/hello.jsp"  authentication-failure-url="/views/jsp/hello.jsp?error=true"
+		    login-page="/views/jsp/login.jsp"  authentication-failure-url="/views/jsp/hello.jsp?error=true"
 			username-parameter="username" authentication-success-handler-ref="successhandler"
 			password-parameter="password" />
 	</http>

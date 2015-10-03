@@ -1,7 +1,5 @@
-<div class="container">
-  <div class="jumbotron inverse">
+ 
     <h2>Todays Report</h2>      
-  </div>
 
   <div class="row">
     <div class="col-md-4"> 

@@ -17,7 +17,7 @@ import com.bizmate.bl.ServiceRequestbl;
 
 @Controller
 
-public class HelloController {
+public class SpringController {
 	@Autowired
 	ServiceRequestbl bl;
 
