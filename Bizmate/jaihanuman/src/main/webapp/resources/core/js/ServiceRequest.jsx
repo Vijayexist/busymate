@@ -1,5 +1,5 @@
 
-var ServiceModule=angular.module("myApp",[]);
+var ServiceModule=angular.module("serviceRequestApp",[]);
 
 ServiceModule.controller("ServiceController", ['$scope', '$http', function($scope,$http){
 	$scope.list=[];
@@ -28,7 +28,7 @@ ServiceModule.controller("ServiceController", ['$scope', '$http', function($scop
 		$scope.serviceDate="";
 	};
 }]);
-
+/*
 myApp.directive('calendar', function () {
     return {
         require: 'ngModel',
@@ -44,7 +44,7 @@ myApp.directive('calendar', function () {
         }
     };
 })
-/*ServiceModule.directive('jqdatepicker', function() {
+ServiceModule.directive('jqdatepicker', function() {
     return {
         restrict: 'A',
         require: 'ngModel',

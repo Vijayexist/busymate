@@ -47,9 +47,10 @@
     				"serviceDate":$scope.serviceDate});
     		var formData= {comments:$scope.comments,
     				serviceDate:$scope.serviceDate};
-    		var response =$http.post("/bizmate/postServiceRequest",formData);
+    		var response =$http.post("/bizmate/postServiceRequest?serviceDate="+$scope.serviceDate+"&comments="+$scope.comments,formData);
     		response.success(function(data, config, headers, status){
     			$scope.message=data;
+    			alert("ServiceRequest Details Saved Successfully!");
     		});
     		response.error(function(data, config, headers, status){
     			alert("the exception is:"+JSON.stringify({data:data}));

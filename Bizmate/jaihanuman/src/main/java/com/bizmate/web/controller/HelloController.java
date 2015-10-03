@@ -1,20 +1,33 @@
 package com.bizmate.web.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bizmate.beans.Customer;
 import com.bizmate.beans.ServiceRequest;
+import com.bizmate.bl.ServiceRequestbl;
 
 @Controller
+
 public class HelloController {
+	@Autowired
+	ServiceRequestbl bl;
+
+	public ServiceRequestbl getBl() {
+		return bl;
+	}
+
+	public void setBl(ServiceRequestbl bl) {
+		this.bl = bl;
+	}
 
 	@RequestMapping(value = "/display2", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -29,18 +42,43 @@ public class HelloController {
 
 		ModelAndView model = new ModelAndView();
 		model.setViewName("Dashboard");
-
 		return model;
 
 	}
 	@RequestMapping(value = "/service", method = RequestMethod.GET)
-	public ModelAndView serviceRequest(){
+	public String serviceRequest(Model mv){
+		ServiceRequest service= new ServiceRequest();
 		
-		ModelAndView model = new ModelAndView();
-		model.setViewName("ServiceRequest");
-		return model;
+		service.setVehicleId("TS102edsj34");
+		service=bl.getServiceRequest("12345");
 		
+		mv.addAttribute("servicebean", service);
+		
+		return  "ServiceRequest";
+		//	model.setViewName("");
 	}
+	/*
+	@RequestMapping(value = "form", method = RequestMethod.GET)
+	public String  showForm(Model model) {
+
+		ServiceRequest service= new ServiceRequest();
+		service.setVehicleId("TS102edsj34");
+		service=bl.getServiceRequest("12345");
+		model.addAttribute("serviceBean", service);
+		return  "ServiceRequest";
+
+	}*/
+
+	
+	/* @RequestMapping(value="/get", method=RequestMethod.GET)
+	    public String prepareVoterBean(Model model, @RequestParam String voterID) {
+	        ...
+	        VoterBean questions = service.getQuestionBean(voterID);
+	        model.addAttribute("questions", questions);
+	        return "questionPage";
+	    }
+	*/
+	@ModelAttribute("servicePost")
 	
 	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
 	public ModelAndView getFeedBackDetails(){
@@ -79,12 +117,10 @@ public class HelloController {
 	}
 	
 	@RequestMapping(value="/postServiceRequest", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
-	public @ResponseBody String postServiceDetails( @ModelAttribute ServiceRequest service,Model model, HttpServletRequest req){
+	public @ResponseBody String postServiceDetails(@RequestParam("serviceDate") String serviceDate, @RequestParam("comments") String comments){
+
 		
-		service.setServiceDate(req.getParameter("serviceDate"));;
-		service.setComments(req.getParameter("comments"));
-		System.out.println(service.getComments());
-		return service.getComments()+"date"+service.getServiceDate();
+		return "data="+serviceDate+":comments="+comments;
 		
 	}
 

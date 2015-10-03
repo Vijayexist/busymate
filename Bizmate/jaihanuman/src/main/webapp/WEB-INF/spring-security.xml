@@ -28,6 +28,8 @@
 	<beans:bean name="successhandler" class="com.bizmate.authentication.AuthenticationProcessingHandler">
 	</beans:bean>
 	
-	
+	<beans:bean name="bl" class="com.bizmate.bl.ServiceRequestbl">
+	</beans:bean>
+	 
 	 
 </beans:beans>

@@ -1,6 +1,6 @@
 package com.bizmate.beans;
 
-import java.util.Date;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 public class ServiceRequest {
 private Customer cust;

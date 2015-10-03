@@ -1,55 +1,44 @@
-  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css"/>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" type="text/css"/>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" type="text/css"/>
- <spring:url value="/resources/core/js/angular.js" var="angularJS" /> 
-<spring:url value="/resources/core/js/ServiceRequest.js" var="serviceJS" />
-<spring:url value="/resources/core/js/jquery.js" var="jquery" />
-<spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrap" />
-<spring:url value="/resources/core/js/bootstrap-datepicker.min.js" var="datepicker" />
-
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
- <script src="${jquery}"></script>
- 
- <script src="${bootstrap}"></script>
-  <script src="${datepicker}"></script>
-<%-- <script src="${angularJS}"></script> --%>
-<script src="${serviceJS}"></script>
-<script>$(function() {
-  
- 
-	$('#datepicker').datepicker({
-      autoclose:true,
-    }).on("changeDate", function(e){
-     console.log(e.date);
-    });
-    
-   
-  
-});
+<script>
+function resetFunction(){
+	document.getElementById("ServiceForm").reset();
+}
 </script>
+
 </head>
 <body>
-<div ng-app="myApp">
-<form  method="post" role="form" ng-submit="submitService()" ng-controller="ServiceController">
-<div>Customer Id:<input type="text" ngReadonly="checked" value=""/ >
+<div>
+<form:form  method="post" modelAttribute="servicebean" id="ServiceForm"  ng-controller="ServiceController">
+<%-- <div>Customer Id:<form:input type="text" path="CustId"  />
 </div><br>
-<div>Customer Name:<input type="text" ngReadonly="checked" />
+<div>Customer Name:<form:input type="text" path="CustName"  />
 </div><br>
-<div>Customer Address:<input type="text" ngReadonly="checked"  />
+<div>Customer Address:<form:input type="text" path="CustAdd" 	  />
 </div><br>
-<div>Customer PhoneNumber:<input type="text" ngReadonly="checked"  />
+<div>Customer PhoneNumber:<form:input type="text" path="CustPhNo"  />
+</div><br> --%>
+<div>Customer ID:${servicebean.cust.custId }</div><br>
+<div>Customer ID:${servicebean.cust.custName}</div><br>
+<div>Customer ID:${servicebean.cust.custAddress }</div><br>
+<div>Customer ID:${servicebean.cust.custPhoneNumber }</div><br>
+<div>Vehicle ID:${servicebean.vehicleId}
 </div><br>
-<div>Service Request:<input type="text" ngReadonly="checked" />
+<div>ServiceRequest ID:${servicebean.serviceId}
 </div><br>
-<div class="row" id="exDateTime">
+<div>ServiceRequest ID:${servicebean.serviceId}
+</div><br>
+
+<div>ServiceDate:<form:input type="text" path="serviceDate" name="serviceDate" data-ng-model="serviceDate" />
+</div><br>
+<!-- <div class="row" id="exDateTime">
       <div class="col-sm-3">
         <h4>Date &amp; Time Inputs</h4>
         <div class="form-group">
@@ -58,16 +47,12 @@
             <input class="form-control" type="text" data-ng-model="serviceDate">
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
-        </div></div></div>
-<div>Comments:<input type="text" data-ng-model="comments" />
+        </div></div></div> -->
+<div>Comments:<form:input type="text" path="comments" name="comments" data-ng-model="comments" />
 </div><br>
-<input type="submit" value="Submit">
-{{3+5}}
-
-
-<h4>You submitted below data through post:</h4>
-		 <pre>Form data ={{list}}</pre>
-</form>
+<input type="button" value="Submit" ng-click="submitService()">
+<input type="button" value="Reset" onclick="resetFunction()">
+</form:form>
 </div>
 </body>
 </html>
