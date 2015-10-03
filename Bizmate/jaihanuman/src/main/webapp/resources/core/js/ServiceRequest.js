@@ -14,9 +14,9 @@ ServiceModule.controller("ServiceController", ['$scope', '$http', function($scop
 				};*/
 		$scope.list.push({"comments": $scope.comments,
 				"serviceDate":$scope.serviceDate});
-		var formData= {comments:$scope.comment,
+		var formData= {comments:$scope.comments,
 				serviceDate:$scope.serviceDate};
-		var response =$http.post("/postServiceRequest",formData);
+		var response =$http.post("/bizmate/postServiceRequest",formData);
 		response.success(function(data, config, headers, status){
 			$scope.message=data;
 		});
@@ -29,7 +29,21 @@ ServiceModule.controller("ServiceController", ['$scope', '$http', function($scop
 	};
 }]);
 
-
+myApp.directive('calendar', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, el, attr, ngModel) {
+            $(el).datepicker({
+                dateFormat: 'yy-mm-dd',
+                onSelect: function (dateText) {
+                    scope.$apply(function () {
+                        ngModel.$setViewValue(dateText);
+                    });
+                }
+            });
+        }
+    };
+})
 /*ServiceModule.directive('jqdatepicker', function() {
     return {
         restrict: 'A',

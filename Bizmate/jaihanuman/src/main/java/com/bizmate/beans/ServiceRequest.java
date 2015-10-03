@@ -6,7 +6,7 @@ public class ServiceRequest {
 private Customer cust;
 private String serviceId;
 private String vehicleId;
-private Date serviceDate;
+private String serviceDate;
 private String comments;
 public Customer getCust() {
 	return cust;
@@ -26,10 +26,10 @@ public String getVehicleId() {
 public void setVehicleId(String vehicleId) {
 	this.vehicleId = vehicleId;
 }
-public Date getServiceDate() {
+public String getServiceDate() {
 	return serviceDate;
 }
-public void setServiceDate(Date serviceDate) {
+public void setServiceDate(String serviceDate) {
 	this.serviceDate = serviceDate;
 }
 public String getComments() {

@@ -4,7 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,12 +44,13 @@ public class HelloController {
 		return model;
 		
 	}
-	@RequestMapping(value="/postServiceRequest", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody String postServiceDetails(@RequestBody ServiceRequest service, HttpServletRequest req){
+	
+	@RequestMapping(value="/postServiceRequest", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
+	public @ResponseBody String postServiceDetails( @ModelAttribute ServiceRequest service,Model model, HttpServletRequest req){
 		
-	//	service.setServiceDate(req.getParameter("date"));;
+		service.setServiceDate(req.getParameter("serviceDate"));;
 		service.setComments(req.getParameter("comments"));
-		
+		System.out.println(service.getComments());
 		return service.getComments()+"date"+service.getServiceDate();
 		
 	}
