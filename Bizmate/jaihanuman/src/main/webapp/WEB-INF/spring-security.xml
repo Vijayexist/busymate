@@ -31,6 +31,6 @@
 	
 	<beans:bean name="bl" class="com.bizmate.bl.ServiceRequestbl">
 	</beans:bean>
-	 
+	 <beans:bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 	 
 </beans:beans>

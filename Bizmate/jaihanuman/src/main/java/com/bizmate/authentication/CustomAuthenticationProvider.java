@@ -37,9 +37,17 @@ public class CustomAuthenticationProvider implements AuthenticationProvider
 		  SimpleGrantedAuthority adminAuthority = new SimpleGrantedAuthority(
 		    "ROLE_ADMIN");
 		  authorities.add(userAuthority);
+		  if(authentication.getName().equals("admin"))
+		  {
 		  authorities.add(adminAuthority);
-		  Authentication auth = new UsernamePasswordAuthenticationToken("1", "1", authorities);
+		  Authentication auth = new UsernamePasswordAuthenticationToken("admin", "admin", authorities);
           return auth;
+		  }else
+		  {
+			  Authentication auth = new UsernamePasswordAuthenticationToken("user", "user", authorities);
+	          return auth;
+		  }
+		  
 	}
 
 	 @Override

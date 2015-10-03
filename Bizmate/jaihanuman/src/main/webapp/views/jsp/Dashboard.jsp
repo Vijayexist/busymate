@@ -50,8 +50,10 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><i class="fa fa-circle fa-stack-2x"></i><a href="#"><span class="glyphicon glyphicon-home"></span> &nbsp;Home</a></li>
+       <sec:authorize access="hasRole('ROLE_ADMIN')">
         <li ><a href="#">CRM</a></li>
         <li><a href="#">Data Dump</a></li>
+        </sec:authorize>
       </ul>
       
     </div>
