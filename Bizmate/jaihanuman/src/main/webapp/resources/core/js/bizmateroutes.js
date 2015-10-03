@@ -5,13 +5,11 @@
     scotchApp.config(function($routeProvider) {
         $routeProvider.when('/queryassistanceForm', {
             templateUrl : 'queryassistanceForm',
-            controller  : 'mainController'
         }).when('/queryassistanceInlineForm',{
         	templateUrl:'queryassistanceInlineForm'
         })
             .when('/', {
                 templateUrl : 'views/jsp/TodaysReport.jsp',
-                controller  : 'mainController'
             })
 
             // route for the about page
@@ -34,10 +32,34 @@
     });
 
     // create the controller and inject Angular's $scope
-    scotchApp.controller('mainController', function($scope) {
-        // create a message to display in our view
-        $scope.message = 'Everyone come and see how good I look!';
-    });
+    scotchApp.controller("ServiceController", ['$scope', '$http', function($scope,$http){
+    	$scope.list=[];
+    	$scope.submitService= function(){
+    		/*var formData= {
+    				"custId":custId,
+    				"custName":custName,
+    				"custAddress":custAddress,
+    				"custPhoneNumber":custPhoneNo,
+    				"serviceId": serviceId
+    				
+    				};*/
+    		$scope.list.push({"comments": $scope.comments,
+    				"serviceDate":$scope.serviceDate});
+    		var formData= {comments:$scope.comments,
+    				serviceDate:$scope.serviceDate};
+    		var response =$http.post("/bizmate/postServiceRequest",formData);
+    		response.success(function(data, config, headers, status){
+    			$scope.message=data;
+    		});
+    		response.error(function(data, config, headers, status){
+    			alert("the exception is:"+JSON.stringify({data:data}));
+    		});
+    		/*empty the data after processing*/
+    		$scope.comments="";
+    		$scope.serviceDate="";
+    		return false;
+    	};
+    }]);
 
     scotchApp.controller('aboutController', function($scope) {
         $scope.message = 'Look! I am an about page.';
