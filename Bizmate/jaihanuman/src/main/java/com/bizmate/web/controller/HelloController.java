@@ -2,13 +2,10 @@ package com.bizmate.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,6 +38,42 @@ public class HelloController {
 		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("ServiceRequest");
+		return model;
+		
+	}
+	
+	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
+	public ModelAndView getFeedBackDetails(){
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName("ServiceFeedback");
+		return model;
+		
+	}
+	@RequestMapping(value = "/queryassistance", method = RequestMethod.GET)
+	public ModelAndView getQueryAssistanceDetails(){
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName("QueryAssistance");
+		return model;
+		
+	}
+	
+	@RequestMapping(value = "/queryassistanceForm", method = RequestMethod.GET)
+	public ModelAndView getQueryAssistanceDetailsForm(){
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName("QueryAssistanceForm");
+		return model;
+		
+	}
+	
+
+	@RequestMapping(value = "/queryassistanceInlineForm", method = RequestMethod.GET)
+	public ModelAndView getQueryAssistanceDetailsInlineForm(){
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName(" QueryAssistanceInlineForm");
 		return model;
 		
 	}

@@ -53,6 +53,8 @@
     </div>
   </div>
 </nav>
+   <div class="container">
 <div ng-view></div>
+</div>
 </body>
 </html>

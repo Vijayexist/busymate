@@ -3,9 +3,11 @@
 
     // configure our routes
     scotchApp.config(function($routeProvider) {
-        $routeProvider.when('/test', {
-            templateUrl : 'views/jsp/TodaysReport.jsp',
+        $routeProvider.when('/queryassistanceForm', {
+            templateUrl : 'queryassistanceForm',
             controller  : 'mainController'
+        }).when('/queryassistanceInlineForm',{
+        	templateUrl:'queryassistanceInlineForm'
         })
             .when('/', {
                 templateUrl : 'views/jsp/TodaysReport.jsp',
@@ -14,13 +16,16 @@
 
             // route for the about page
             .when('/service', {
-                templateUrl : '/bizmate/service',
+                templateUrl : 'service',
                 controller  : 'aboutController'
             })
 
             // route for the contact page
-            .when('/contact', {
-                templateUrl : 'pages/contact.html',
+            .when('/feedback', {
+                templateUrl : 'feedback',
+                controller  : 'contactController'
+            }).when('/assistance', {
+                templateUrl : 'queryassistance',
                 controller  : 'contactController'
             }).otherwise({
             	redirectTo:'/test'

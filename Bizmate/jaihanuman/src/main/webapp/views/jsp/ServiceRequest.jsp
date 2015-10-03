@@ -1,8 +1,6 @@
-  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,20 +38,18 @@
 </head>
 <body>
 <div ng-app="myApp">
-<form:form  method="post" modelAttribute="service" role="form" ng-submit="submitService()" ng-controller="ServiceController">
-<div>Customer Id:<form:input type="text" path="CustId"ngReadonly="checked"  />
+<form  method="post" role="form" ng-submit="submitService()" ng-controller="ServiceController">
+<div>Customer Id:<input type="text" ngReadonly="checked" value=""/ >
 </div><br>
-<div>Customer Name:<form:input type="text" path="CustName" ngReadonly="checked" />
+<div>Customer Name:<input type="text" ngReadonly="checked" />
 </div><br>
-<div>Customer Address:<form:input type="text" path="CustAdd" ngReadonly="checked"  />
+<div>Customer Address:<input type="text" ngReadonly="checked"  />
 </div><br>
-<div>Customer PhoneNumber:<form:input type="text" path="CustPhNo" ngReadonly="checked"  />
+<div>Customer PhoneNumber:<input type="text" ngReadonly="checked"  />
 </div><br>
-<div>Service Request:<form:input type="text" path="serviceReq" ngReadonly="checked" />
+<div>Service Request:<input type="text" ngReadonly="checked" />
 </div><br>
-<div>Service Request:<form:input type="text" path="serviceDate" data-ng-model="serviceDate" />
-</div><br>
-<!-- <div class="row" id="exDateTime">
+<div class="row" id="exDateTime">
       <div class="col-sm-3">
         <h4>Date &amp; Time Inputs</h4>
         <div class="form-group">
@@ -62,8 +58,8 @@
             <input class="form-control" type="text" data-ng-model="serviceDate">
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
-        </div></div></div> -->
-<div>Comments:<form:input type="text" path="comments" data-ng-model="comments" />
+        </div></div></div>
+<div>Comments:<input type="text" data-ng-model="comments" />
 </div><br>
 <input type="submit" value="Submit">
 {{3+5}}
@@ -71,7 +67,7 @@
 
 <h4>You submitted below data through post:</h4>
 		 <pre>Form data ={{list}}</pre>
-</form:form>
+</form>
 </div>
 </body>
 </html>
