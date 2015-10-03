@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bizmate.beans.Customer;
+import com.bizmate.beans.ServiceFeedback;
 import com.bizmate.beans.ServiceRequest;
+import com.bizmate.bl.ServiceFeedbackbl;
 import com.bizmate.bl.ServiceRequestbl;
 
 @Controller
@@ -20,6 +22,16 @@ import com.bizmate.bl.ServiceRequestbl;
 public class SpringController {
 	@Autowired
 	ServiceRequestbl bl;
+	@Autowired
+	ServiceFeedbackbl blf;
+
+	public ServiceFeedbackbl getBlf() {
+		return blf;
+	}
+
+	public void setBlf(ServiceFeedbackbl blf) {
+		this.blf = blf;
+	}
 
 	public ServiceRequestbl getBl() {
 		return bl;
@@ -49,7 +61,7 @@ public class SpringController {
 	public String serviceRequest(Model mv){
 		ServiceRequest service= new ServiceRequest();
 		
-		service.setVehicleId("TS102edsj34");
+		
 		service=bl.getServiceRequest("12345");
 		
 		mv.addAttribute("servicebean", service);
@@ -57,6 +69,8 @@ public class SpringController {
 		return  "ServiceRequest";
 		//	model.setViewName("");
 	}
+	
+	
 	/*
 	@RequestMapping(value = "form", method = RequestMethod.GET)
 	public String  showForm(Model model) {
@@ -78,14 +92,15 @@ public class SpringController {
 	        return "questionPage";
 	    }
 	*/
-	@ModelAttribute("servicePost")
+	
 	
 	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
-	public ModelAndView getFeedBackDetails(){
+	public String getFeedBackDetails(Model model){
+		ServiceFeedback servicefeed= new ServiceFeedback();
 		
-		ModelAndView model = new ModelAndView();
-		model.setViewName("ServiceFeedback");
-		return model;
+		servicefeed=blf.getServiceFeed();
+		model.addAttribute("serviceFeedPost",servicefeed);
+		return "ServiceFeedback";
 		
 	}
 	@RequestMapping(value = "/queryassistance", method = RequestMethod.GET)
@@ -124,5 +139,12 @@ public class SpringController {
 		
 	}
 
+	@RequestMapping(value="/postServiceFeed", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
+	public @ResponseBody String postServiceDetails(@RequestParam("complaint") String complaint, @RequestParam("feed") String feed,@RequestParam("improveFeed") String improveFeed, @RequestParam("rating") String rating){
+
+		
+		return "complaint="+complaint+":feed="+feed+":improveFeed"+improveFeed+":rating"+rating;
+		
+	}
 
 }

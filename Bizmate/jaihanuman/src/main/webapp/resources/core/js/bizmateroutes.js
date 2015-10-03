@@ -54,6 +54,7 @@
     		response.success(function(data, config, headers, status){
     			$scope.message=data;
     			alert("ServiceRequest Details Saved Successfully!");
+    			location.replace("/bizmate/dashboard#/")
     		});
     		response.error(function(data, config, headers, status){
     			alert("the exception is:"+JSON.stringify({data:data}));
@@ -62,6 +63,51 @@
     		$scope.comments="";
     		$scope.serviceDate="";
     		return false;
+    	};
+    }]);
+
+    scotchApp.controller('aboutController', function($scope) {
+    	$scope.pageClass = 'page-home';
+    });
+
+    scotchApp.controller('contactController', function($scope) {
+    	$scope.pageClass = 'page-home';
+    });
+    
+    scotchApp.controller("ServiceFeedController", ['$scope', '$http',  function($scope,$http){
+    	$scope.list=[];
+    	$scope.submitFeed= function(){
+    		/*var formData= {
+    				"custId":custId,
+    				"custName":custName,
+    				"custAddress":custAddress,
+    				"custPhoneNumber":custPhoneNo,
+    				"serviceId": serviceId
+    				
+    				};*/
+    		$scope.list.push({"complaint":$scope.complaint,
+    			"feed": $scope.feed,
+    				"improveFeed":$scope.improveFeed,
+    				"rating":$scope.rating});
+    		var formFeed= {complaint:$scope.complaint,
+    				feed:$scope.feed,
+    				improveFeed:$scope.improveFeed,
+    				rating:$scope.rating};
+    		var response =$http.post("/bizmate/postServiceFeed?complaint="+$scope.complaint+"&feed="+$scope.feed+"&improveFeed"+$scope.improveFeed+"&rating"+$scope.rating,formFeed);
+    		response.success(function(data, config, headers, status){
+    			$scope.message=data;
+    			alert("ServiceRequest Details Saved Successfully!");
+    			location.replace("/bizmate/dashboard#/");
+    		});
+    		response.error(function(data, config, headers, status){
+    			alert("the exception is:"+JSON.stringify({data:data}));
+    		});
+    		/*empty the data after processing*/
+    		$scope.complaint="";
+    		$scope.feed="";
+    		$scope.improveFeed="";
+    		$scope.rating="";
+    	//	return false;
     	};
     }]);
 
