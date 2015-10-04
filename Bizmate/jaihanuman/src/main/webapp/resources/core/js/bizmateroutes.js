@@ -93,7 +93,7 @@
     				feed:$scope.feed,
     				improveFeed:$scope.improveFeed,
     				rating:$scope.rating};
-    		var response =$http.post("/bizmate/postServiceFeed?complaint="+$scope.complaint+"&feed="+$scope.feed+"&improveFeed"+$scope.improveFeed+"&rating"+$scope.rating,formFeed);
+    		var response =$http.post("/bizmate/postServiceFeed?complaint="+$scope.complaint+"&feed="+$scope.feed+"&improveFeed="+$scope.improveFeed+"&rating="+$scope.rating,formFeed);
     		response.success(function(data, config, headers, status){
     			$scope.message=data;
     			alert("ServiceRequest Details Saved Successfully!");
@@ -118,3 +118,6 @@
     scotchApp.controller('contactController', function($scope) {
     	$scope.pageClass = 'page-home';
     });
+    
+    
+    

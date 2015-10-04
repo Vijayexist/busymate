@@ -134,7 +134,7 @@ public class SpringController {
 	@RequestMapping(value="/postServiceRequest", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
 	public @ResponseBody String postServiceDetails(@RequestParam("serviceDate") String serviceDate, @RequestParam("comments") String comments){
 
-		
+		System.out.println("data="+serviceDate+":comments="+comments);
 		return "data="+serviceDate+":comments="+comments;
 		
 	}
@@ -142,8 +142,8 @@ public class SpringController {
 	@RequestMapping(value="/postServiceFeed", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
 	public @ResponseBody String postServiceDetails(@RequestParam("complaint") String complaint, @RequestParam("feed") String feed,@RequestParam("improveFeed") String improveFeed, @RequestParam("rating") String rating){
 
-		
-		return "complaint="+complaint+":feed="+feed+":improveFeed"+improveFeed+":rating"+rating;
+		System.out.println("complaint="+complaint+":feed="+feed+":improveFeed="+improveFeed+":rating="+rating);
+		return "complaint="+complaint+":feed="+feed+":improveFeed="+improveFeed+":rating="+rating;
 		
 	}
 

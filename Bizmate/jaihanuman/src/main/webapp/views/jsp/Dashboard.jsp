@@ -14,8 +14,11 @@
           <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
           <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.js"></script>
           <script src="../../bizmate/resources/core/js/bizmateroutes.js"></script>
+          <script src="../../bizmate/resources/core/js/bootstrap-datepicker.js"></script>
+          <script src="../../bizmate/resources/core/js/star-rating.js"></script>
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../bizmate/resources/core/css/dashboard.css">
+    <link rel="stylesheet" href="../../bizmate/resources/core/css/datepicker.css">
 </head>
 <body>
 

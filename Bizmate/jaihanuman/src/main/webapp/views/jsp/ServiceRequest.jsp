@@ -1,3 +1,4 @@
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -6,12 +7,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Service Request</title>
+<div class="jumbotron inverse">
+	<h2>Service Feedback</h2>
+</div>
+
 <script>
+$(document).ready(function() {
+    $('#datepick').datepicker();
+  });
+/* function datePicker(){
+	
+	$('#dp2').datepicker('show');
+} */
 function resetFunction(){
 	document.getElementById("ServiceForm").reset();
-}
+};
 </script>
+
 
 </head>
 <body  >
@@ -54,13 +67,20 @@ function resetFunction(){
     <label for="reqID">ServiceRequest ID</label>
   <div id="reqID">${servicebean.serviceId} </div>
 </div>
+
+<br><br><br>
  <div class="col-md-10">
 <label for="reqID"> ServiceDate  <span class="glyphicon glyphicon-calendar"></span>:</label>
  <div id="reqID">
-
- <form:input type="text" path="serviceDate" name="serviceDate" data-ng-model="serviceDate" class="form-control" size="12"  style="width:20%"/>
- </div>
+ <form:input path="serviceDate" name="serviceDate" data-ng-model="serviceDate" type="text" data-date-format="mm/dd/yy" id="datepick" readonly="true"></form:input>
+   <span class="add-on"><i class="icon-th"></i></span>
 </div>
+   </div>
+
+<br><br>
+<%--  <form:input type="text" path="serviceDate" name="serviceDate" data-ng-model="serviceDate" value="2012-05-15 21:05" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii" class="form-control" size="12"  style="width:20%"/> --%>
+
+
 <br>
 <!-- <div class="row" id="exDateTime">
       <div class="col-sm-3">
@@ -76,7 +96,7 @@ function resetFunction(){
 
  <div class="col-md-10">
     <label for="usr">Comments:</label>
-  <form:textarea   path="comments" name="comments" data-ng-model="comments" style="width:20%" id="usr" class="form-control" cols="100" rows="3"/>
+  <form:textarea   path="comments" name="comments" data-ng-model="comments" style="width:50%" id="usr" class="form-control" cols="100" rows="3"/>
 </div>
 <div class="col-md-6" style="margin-top:15px">
 <input type="button" value="Submit" class="btn btn-info" ng-click="submitService()">

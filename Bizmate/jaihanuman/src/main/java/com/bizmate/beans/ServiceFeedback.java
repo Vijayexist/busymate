@@ -7,7 +7,7 @@ public class ServiceFeedback {
 	private String complaint;
 	private String feed;
 	private String improveFeed;
-	private String rating;
+	private float rating;
 	public ServiceRequest getServiceRequest() {
 		return serviceRequest;
 	}
@@ -32,10 +32,10 @@ public class ServiceFeedback {
 	public void setImproveFeed(String improveFeed) {
 		this.improveFeed = improveFeed;
 	}
-	public String getRating() {
+	public float getRating() {
 		return rating;
 	}
-	public void setRating(String rating) {
+	public void setRating(float rating) {
 		this.rating = rating;
 	}
 	
