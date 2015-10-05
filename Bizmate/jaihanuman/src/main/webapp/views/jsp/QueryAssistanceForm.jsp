@@ -22,3 +22,9 @@
       <button type="submit" class="form-control btn btn-lg btn-primary">Submit</button>
   </div>
 </form>
+<style>
+label
+{
+	margin-bottom:8px;
+}
+</style>

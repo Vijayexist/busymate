@@ -1,81 +1,154 @@
 <head>
 <script>
-$(document).ready(function() {
-    $('#datepicker').datepicker();
-    $('#datepicker1').datepicker();
-  });
+	$(document).ready(function() {
+		$('#datepicker').datepicker();
+		$('#datepicker1').datepicker();
+	});
 
-/* function datePicker(){
+	/* function datePicker(){
 	
-	$('#dp2').datepicker('show');
-} */
+	 $('#dp2').datepicker('show');
+	 } */
 </script>
 
 </head>
- <body>
-    <h2>Todays Report</h2>      
+<body>
+	<h2>Todays Report</h2>
 
-<div class="row">
-<div class="col-md-6">
-    <label for="reqID">Category Type:</label>
-    <div id="reqID">
-<input type="text" name="CategoryType"/>
-</div>
-</div>
-<div class="col-md-6">
-    <label for="reqID">Category Name:</label>
-    <div id="reqID">
-<input type="text" name="CategoryName"/>
-</div>
-</div>
-<div class="col-md-6">
-    <label for="reqID">Date From:</label>
-    <div id="reqID">
-<input type="text" name="DateFrom"  data-date-format="mm/dd/yy" id="datepicker" readonly="readonly"/>
-</div>
-</div>
-<div class="col-md-6">
-    <label for="reqID">Date To:</label>
-    <div id="reqID">
-<input type="text" name="DateTo"  data-date-format="mm/dd/yy" id="datepicker1" readonly="readonly"/>
-</div>
-</div>
-<div class="col-md-10" style="margin-top:15px;padding-bottom:10px;text-align:center">
-<div id="reqID">
-<input type="submit" value="Search"/>
-</div>
-</div>
-</div>
-  <div class="row">
-    <div class="col-md-4"> 
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">Service Request</a></li>
-           <li><a href="#service" style="color:red"><span class="glyphicon glyphicon-wrench"></span>&nbsp;TS O9 BL 8289</a></li>
-        <li><a href="#service" style="color:red"><span class="glyphicon glyphicon-wrench"></span>&nbsp;TS O9 BL 8289</a></li>
-         <li><a href="#service" style="color:green"><span class="glyphicon glyphicon-wrench"></span>&nbsp;TS O9 BL 8289</a></li>
-        <li><a href="#service" style="color:orange"><span class="glyphicon glyphicon-wrench"></span>&nbsp;TS O9 BL 8289</a></li>
-      </ul>
-    </div>
-    <div class="col-md-4"> 
-     <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">Service Feedback</a></li>
-        
-        <li><a href="#feedback"><span class="glyphicon glyphicon-indent-right"></span>&nbsp;TS O9 BL 8289</a></li>
-        <li><a href="#feedback"><span class="glyphicon glyphicon-indent-right"></span>&nbsp;TS O9 BL 8289</a></li>   
-        <li><a href="#feedback"><span class="glyphicon glyphicon-indent-right"></span>&nbsp;TS O9 BL 8289</a></li>
-        <li><a href="#feedback"><span class="glyphicon glyphicon-indent-right"></span>&nbsp;TS O9 BL 8289</a></li>
-      </ul>
-    </div>
-    <div class="col-md-4"> 
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Query assistance</a></li>
-           <li><a href="#assistance"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;TSO9BL8289</a></li>
-        <li><a href="#queryassistanceForm" style="color:orange"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;TS O9 BL 8289</a></li>
-         <li><a href="#queryassistanceInlineForm" style="color:green"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;TS O9 BL 8289</a></li>
-        <li><a href="#assistance"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;TS O9 BL 8289</a></li>
-      </ul>
-    </div>
-    
-    <div class="clearfix visible-lg"></div>
-  </div>
+	<div class="row">
+		<div class="form-group col-md-3">
+			<div id="reqID">
+				<input type="text" name="CategoryType" class="form-control"
+					placeholder="Select category" />
+			</div>
+		</div>
+		<div class="form-group col-md-3">
+			<div id="reqID">
+				<input type="text" name="CategoryName" class="form-control"
+					placeholder="Select type" />
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-3">
+			<div id="reqID">
+				<input type="text" name="DateFrom" data-date-format="mm/dd/yy"
+					id="datepicker" readonly="readonly" class="form-control"
+					placeholder="From date" />
+			</div>
+		</div>
+		<div class="form-group col-md-3">
+			<div id="reqID">
+				<input type="text" name="DateTo" data-date-format="mm/dd/yy"
+					id="datepicker1" readonly="readonly" class="form-control"
+					placeholder="To date" />
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<label for="reqID"> </label>
+			<button type="button" class="btn btn-default">
+				<span class="glyphicon glyphicon-search"> Search
+			</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+
+			<h3>Service Request</h3>
+			<br>
+			<div class="widget-container widget-top3chart boxed">
+
+				<ul class="chart-tab video active">
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#service" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#service" class="chart-title" hidefocus="true"
+						style="outline: none;">TS O9 BL 8289y</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#service" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#service" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+				</ul>
+
+			</div>
+
+		</div>
+		<div class="col-md-4">
+			<h3>Service Feedback</h3>
+			<br>
+			<div class="widget-container widget-top3chart boxed">
+
+				<ul class="chart-tab video active">
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#feedback" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#feedback" class="chart-title" hidefocus="true"
+						style="outline: none;">TS O9 BL 8289y</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#feedback" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#feedback" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h3>Service Request</h3>
+			<br>
+			<div class="widget-container widget-top3chart boxed">
+
+				<ul class="chart-tab video active">
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#assistance" class="chart-title"
+						style="outline: none; color: green">TS O9 BL 8289</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#queryassistanceForm" class="chart-title"
+						hidefocus="true" style="outline: none; color: orange">TS O9 BL
+							8289y</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#queryassistanceInlineForm" class="chart-title"
+						style="outline: none; color: blue">TS O9 BL 8289</a></li>
+					<li class="clearfix"><span class="position">&nbsp;</span>
+						<div class="chart-avatar">
+							<span class="glyphicon glyphicon-screenshot"></span>
+						</div> <a href="#assistance" class="chart-title" style="outline: none;">TS
+							O9 BL 8289</a></li>
+				</ul>
+
+			</div>
+
+
+		</div>
+
+		<div class="clearfix visible-lg"></div>
+	</div>
 </body>

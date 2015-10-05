@@ -2,7 +2,12 @@
 <html lang="en">
 
 <body>
-
+<style>
+label
+{
+	margin-bottom:8px;
+}
+</style>
 <div class="container">
 <div class="container">
 	  <div class="jumbotron inverse">
