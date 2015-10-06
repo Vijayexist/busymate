@@ -15,7 +15,7 @@ label
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Service Request</title>
 <div class="jumbotron inverse">
-	<h2>Service Feedback</h2>
+	<h2>Service Request</h2>
 </div>
 
 <script>

@@ -60,25 +60,25 @@
 			<div class="widget-container widget-top3chart boxed">
 
 				<ul class="chart-tab video active">
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
-						</div> <a href="#service" class="chart-title" style="outline: none;">TS
+						</div> <a href="#service" class="chart-title" style="outline: none;display:block">TS
 							O9 BL 8289</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#service" class="chart-title" hidefocus="true"
-						style="outline: none;">TS O9 BL 8289y</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+						style="outline: none;display:block">TS O9 BL 8289y</a></li>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
-						</div> <a href="#service" class="chart-title" style="outline: none;">TS
+						</div> <a href="#service" class="chart-title" style="outline: none;display:block">TS
 							O9 BL 8289</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
-						</div> <a href="#service" class="chart-title" style="outline: none;">TS
+						</div> <a href="#service" class="chart-title" style="display:block">TS
 							O9 BL 8289</a></li>
 				</ul>
 
@@ -91,22 +91,22 @@
 			<div class="widget-container widget-top3chart boxed">
 
 				<ul class="chart-tab video active">
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#feedback" class="chart-title" style="outline: none;">TS
 							O9 BL 8289</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#feedback" class="chart-title" hidefocus="true"
 						style="outline: none;">TS O9 BL 8289y</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#feedback" class="chart-title" style="outline: none;">TS
 							O9 BL 8289</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#feedback" class="chart-title" style="outline: none;">TS
@@ -121,23 +121,23 @@
 			<div class="widget-container widget-top3chart boxed">
 
 				<ul class="chart-tab video active">
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#assistance" class="chart-title"
 						style="outline: none; color: green">TS O9 BL 8289</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#queryassistanceForm" class="chart-title"
 						hidefocus="true" style="outline: none; color: orange">TS O9 BL
 							8289y</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#queryassistanceInlineForm" class="chart-title"
 						style="outline: none; color: blue">TS O9 BL 8289</a></li>
-					<li class="clearfix"><span class="position">&nbsp;</span>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#assistance" class="chart-title" style="outline: none;">TS
