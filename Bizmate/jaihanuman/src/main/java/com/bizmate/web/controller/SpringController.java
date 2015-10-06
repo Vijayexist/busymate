@@ -1,10 +1,16 @@
 package com.bizmate.web.controller;
 
+import java.io.IOException;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -145,6 +151,23 @@ public class SpringController {
 		System.out.println("complaint="+complaint+":feed="+feed+":improveFeed="+improveFeed+":rating="+rating);
 		return "complaint="+complaint+":feed="+feed+":improveFeed="+improveFeed+":rating="+rating;
 		
+	}
+	
+	
+	@RequestMapping(value = "/postjson", method = RequestMethod.POST, produces="application/json", consumes="application/json")
+	@ResponseBody
+	public String post(@RequestBody String json) throws JsonGenerationException, JsonMappingException, IOException {
+ 	    ObjectMapper mapper = new ObjectMapper();
+ 	   Customer c=new Customer();
+	    try {
+			c = mapper.readValue(json, Customer.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    //do some things with json, put some header information in json
+	    return mapper.writeValueAsString(c);
 	}
 
 }

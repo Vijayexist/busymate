@@ -38,19 +38,17 @@
     scotchApp.controller("ServiceController", ['$scope', '$http',  function($scope,$http){
     	$scope.list=[];
     	$scope.submitService= function(){
-    		/*var formData= {
-    				"custId":custId,
-    				"custName":custName,
-    				"custAddress":custAddress,
-    				"custPhoneNumber":custPhoneNo,
-    				"serviceId": serviceId
+    		var formData= {
+    				"custId":"1",
+    				"custName":"custName",
+    				"custAdd":{"phone":"123","area":"123"},
+    				"custPhoneNumber":"custPhoneNo"
     				
-    				};*/
+    				};
     		$scope.list.push({"comments": $scope.comments,
     				"serviceDate":$scope.serviceDate});
-    		var formData= {comments:$scope.comments,
-    				serviceDate:$scope.serviceDate};
-    		var response =$http.post("/bizmate/postServiceRequest?serviceDate="+$scope.serviceDate+"&comments="+$scope.comments,formData);
+    		 
+    		var response =$http.post("/bizmate/postjson",formData);
     		response.success(function(data, config, headers, status){
     			$scope.message=data;
     			alert("ServiceRequest Details Saved Successfully!");

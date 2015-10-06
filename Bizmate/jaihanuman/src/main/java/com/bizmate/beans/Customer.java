@@ -4,6 +4,13 @@ public class Customer {
 private int custId;
 private String custName;
 private String custAddress;
+private CustomerAddress custAdd;
+public CustomerAddress getCustAdd() {
+	return custAdd;
+}
+public void setCustAdd(CustomerAddress custAdd) {
+	this.custAdd = custAdd;
+}
 private String custPhoneNumber;
 public int getCustId() {
 	return custId;
