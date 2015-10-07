@@ -12,7 +12,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
 		<!--//webfonts-->
 </head>
-<body>
+<body style="background-image:url('../../resources/core/images/login-cars.png')">
 	 <!-----start-main---->
 	
 	 <div class="main">
@@ -22,7 +22,7 @@
 						<img src="../../resources/core/images/user.png" alt=""/>
 					</div>
 				 <form name='loginForm'
-		  action="/bizmate/<c:url value='j_spring_security_check' />" method='POST'>
+		  action="/bizmate/<c:url value='j_spring_security_check' />" onsubmit="" method='POST'>
 						<input type="text" class="text" value="USERNAME" name="username"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
 						<input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 						<div class="submit">
