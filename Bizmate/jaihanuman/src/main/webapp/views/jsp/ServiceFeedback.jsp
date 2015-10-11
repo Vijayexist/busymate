@@ -17,10 +17,7 @@
 	bottom: 0;
 	float: right
 }
-.star-rating .caption
-{
-display:none !important;
-}
+
 label
 {
 	margin-bottom:8px;
@@ -99,9 +96,10 @@ label
 		
 		<div class="col-md-6">
 				<label for="reqID">Customer Rating:&nbsp;&nbsp;</label>
-				<form:input path="rating" name="rating" id="input-21a" value="0"
+				<%-- <form:input path="rating" name="rating" id="input-21a" value="0"
 					type="number" class="rating" data-symbol="*" min="0" max="5"
-					step="0.5" data-size="md" ng-model="rating"></form:input>
+					step="0.5" data-size="md" ng-model="rating"></form:input> --%>
+					<input path="rating" name="rating" id="input-21d" value="0" type="number" style="color:white" class="rating" min=0 max=5 step=0.5 data-size="sm" ng-model="rating"></input>
 			</div>
 		
 		
@@ -153,13 +151,15 @@ label
 						<tbody>
 							<tr>
 								<td>Rating</td>
-								<td>4</td>
+								<td>{{rating}}</td>
 
 							</tr>
-							<tr class="success">
-								<td>Satisfaction Level</td>
-								<td>Very good</td>
-
+							<tr >
+							<td>Result</td>
+								<td class="star-rating caption" style="font-size:20px">
+								<span id="myrating"></span>
+								</td>
+								
 							</tr>
 						</tbody>
 					</table>

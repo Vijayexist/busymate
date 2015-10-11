@@ -10,6 +10,11 @@
 	 $('#dp2').datepicker('show');
 	 } */
 </script>
+<style type="text/css">
+.glyphicon.glyphicon-plus {
+    font-size:50px;
+}
+</style>
 
 </head>
 <body>
@@ -85,7 +90,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" >
 			<h3>Service Feedback</h3>
 			<br>
 			<div class="widget-container widget-top3chart boxed">
@@ -116,17 +121,24 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<h3>Service Request</h3>
+			<h3>Query Assistance</h3>
 			<br>
-			<div class="widget-container widget-top3chart boxed">
+			<div class="widget-container widget-top3chart boxed" >
 
 				<ul class="chart-tab video active">
-					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
+					<li class="clearfix"  ng-controller="queryListController" ng-repeat="query in queryList" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
-						</div> <a href="#assistance" class="chart-title"
-						style="outline: none; color: green">TS O9 BL 8289</a></li>
-					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
+						</div> <a ng-href="#queryassistanceForm/{{$index}}" class="chart-title"
+						style="outline: none; color: green">{{query.vehNumber}}</a></li>
+						
+						<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
+						
+							
+						 <a href="#queryassistanceForm" class="chart-title"
+						hidefocus="true" style="outline: none; color: #bababa"><div style="height:35px"><span class="glyphicon glyphicon-plus"></div></span></a></li>
+						
+					<!-- <li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#queryassistanceForm" class="chart-title"
@@ -141,7 +153,7 @@
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#assistance" class="chart-title" style="outline: none;">TS
-							O9 BL 8289</a></li>
+							O9 BL 8289</a></li> -->
 				</ul>
 
 			</div>

@@ -3,16 +3,17 @@
 
     // configure our routes
     scotchApp.config(function($routeProvider) {
-        $routeProvider.when('/queryassistanceForm', {
+        $routeProvider.when('/queryassistanceForm/:index?', {
             templateUrl : 'queryassistanceForm',
-            controller:'aboutController'
+            controller:'queryController'
         }).when('/queryassistanceInlineForm',{
         	templateUrl:'queryassistanceInlineForm',
         	controller:'aboutController'
         })
+        
             .when('/', {
                 templateUrl : 'views/jsp/TodaysReport.jsp',
-                controller:'aboutController'
+                controller:'queryListController'
             })
 
             // route for the about page
@@ -34,6 +35,25 @@
             		);
     });
 
+    
+    //create service to share variables
+    scotchApp.service('shareProperty', function(){
+    	var queryUsers= [
+    	     			
+    	     			];
+    	 return {
+	            getProperty: function () {
+	                return queryUsers;
+	            },
+	            setProperty: function(value) {
+	            	queryUsers.push( value);
+	            } ,getIndexedItem:function(index)
+	            {
+	            	return queryUsers[index];
+	            }
+	            
+	        };
+    });
     // create the controller and inject Angular's $scope
     scotchApp.controller("ServiceController", ['$scope', '$http',  function($scope,$http){
     	$scope.list=[];
@@ -68,8 +88,12 @@
     	$scope.pageClass = 'page-home';
     });
 
-    scotchApp.controller('contactController', function($scope) {
-    	$scope.pageClass = 'page-home';
+    scotchApp.controller('queryListController', function($scope, shareProperty) {
+    	
+    	$scope.queryList=[];
+    	//$scope.localindex=-1;
+    	//shareProperty.setIndex($scope.localindex);
+    	$scope.queryList= shareProperty.getProperty();
     });
     
     scotchApp.controller("ServiceFeedController", ['$scope', '$http',  function($scope,$http){
@@ -109,6 +133,23 @@
     	};
     }]);
 
+    scotchApp.controller('queryController', function($location,$scope, shareProperty, $routeParams, $http)
+    		{
+    	
+    	$scope.query={};
+    	$scope.selected=$routeParams.index;
+    	alert($scope.selected);
+    	if($scope.selected!=undefined)
+    	$scope.query=shareProperty.getIndexedItem($scope.selected);
+    	$scope.submitData=function()
+    	{
+    	//	submit to form
+    		
+    		shareProperty.setProperty($scope.query);
+    		$location.path("/");
+    	}
+    	alert($scope.query.rating);
+    });
     scotchApp.controller('aboutController', function($scope) {
     	$scope.pageClass = 'page-home';
     });

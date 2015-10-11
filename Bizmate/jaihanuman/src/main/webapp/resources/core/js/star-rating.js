@@ -333,6 +333,21 @@
             cap = isEmpty(capVal) ? self.defaultCaption.replace(/\{rating\}/g, val) : capVal;
             css = isEmpty(cssVal) ? self.clearCaptionClass : cssVal;
             caption = (val === self.clearValue) ? self.clearCaption : cap;
+            /*
+             * chaitu changes
+             */
+            try
+            {
+            	document.getElementById('myrating').innerHTML=caption;
+            	document.getElementById('myrating').className=css;
+            }
+            catch(e)
+            {
+            	
+            }
+            /*
+             * chaitu changes end
+             */
             return '<span class="' + css + '">' + caption + '</span>';
         },
         getWidthFromValue: function (val) {
@@ -464,16 +479,16 @@
         showCaption: true,
         defaultCaption: '{rating} Stars',
         starCaptions: {
-            0.5: 'Half Star',
-            1: 'One Star',
-            1.5: 'One & Half Star',
-            2: 'Two Stars',
-            2.5: 'Two & Half Stars',
-            3: 'Three Stars',
-            3.5: 'Three & Half Stars',
-            4: 'Four Stars',
-            4.5: 'Four & Half Stars',
-            5: 'Five Stars'
+            0.5: 'Un desirable',
+            1: 'Un Desirable',
+            1.5: 'Poor',
+            2: 'Bad',
+            2.5: 'Bad',
+            3: 'Good',
+            3.5: 'Good',
+            4: 'VeryGood',
+            4.5: 'Excellent',
+            5: 'Excellent'
         },
         starCaptionClasses: {
             0.5: 'label label-danger',
