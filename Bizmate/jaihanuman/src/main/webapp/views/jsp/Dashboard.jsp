@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="../../bizmate/resources/core/css/dashboard.css">
     <link rel="stylesheet" href="../../bizmate/resources/core/css/datepicker.css">
 </head>
+<style>
+h2,h3,h1
+{
+color:brown;
+}
+</style>
 <body style="background-image:url('../../bizmate/resources/core/images/dashboard.png')">
  <% 
         Integer counter = (Integer)session.getAttribute("counter");
@@ -67,6 +73,7 @@
        <sec:authorize access="hasRole('ROLE_ADMIN')">
         <li ><a href="#">CRM</a></li>
         <li><a href="#">Data Dump</a></li>
+        <li><a href="#">Reports</a></li>
         </sec:authorize>
       </ul>
       

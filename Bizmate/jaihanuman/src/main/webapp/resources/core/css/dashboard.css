@@ -17,12 +17,7 @@
 
 /* home -------------------------- */
 .page-home.ng-leave         {
-    -webkit-transform-origin: 0% 0%;
-	-webkit-animation: rotateFall 1s both ease-in;
-	-moz-transform-origin: 0% 0%;
-	-moz-animation: rotateFall 1s both ease-in;
-	transform-origin: 0% 0%;
-	animation: rotateFall 1s both ease-in;
+    
 }
 .page-home.ng-enter 		{  
     -webkit-animation:scaleUp 0.5s both ease-in;
