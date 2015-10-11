@@ -10,7 +10,9 @@
         	templateUrl:'queryassistanceInlineForm',
         	controller:'aboutController'
         })
-        
+         .when('/dataChart',{
+        	templateUrl:'dataChart'
+        })
             .when('/', {
                 templateUrl : 'views/jsp/TodaysReport.jsp',
                 controller:'queryListController'

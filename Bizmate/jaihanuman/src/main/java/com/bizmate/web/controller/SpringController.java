@@ -137,6 +137,15 @@ public class SpringController {
 		
 	}
 	
+	@RequestMapping(value = "/dataChart", method = RequestMethod.GET)
+	public ModelAndView getDataToAnalyze(){
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName("barTest");
+		return model;
+		
+	}
+	
 	@RequestMapping(value="/postServiceRequest", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
 	public @ResponseBody String postServiceDetails(@RequestParam("serviceDate") String serviceDate, @RequestParam("comments") String comments){
 

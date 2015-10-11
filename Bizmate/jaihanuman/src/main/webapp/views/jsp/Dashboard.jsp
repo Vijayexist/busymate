@@ -73,7 +73,7 @@ color:brown;
        <sec:authorize access="hasRole('ROLE_ADMIN')">
         <li ><a href="#">CRM</a></li>
         <li><a href="#">Data Dump</a></li>
-        <li><a href="#">Reports</a></li>
+        <li><a href="#dataChart">Reports</a></li>
         </sec:authorize>
       </ul>
       
