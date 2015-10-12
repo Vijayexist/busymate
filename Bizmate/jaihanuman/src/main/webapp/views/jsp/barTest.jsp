@@ -29,7 +29,7 @@
  
     
     
-    <div id="chart2b" style="margin-top:20px; margin-left:20px; width:300px; height:300px;"></div>
+    <div id="chart2b" style="margin-top:20px; margin-left:20px;width:70%;height:100%"></div>
     
    
 
@@ -39,17 +39,16 @@
     
   <script class="code" type="text/javascript">$(document).ready(function(){
 	  var ticks = ['Param1', 'Param2', 'Param3', 'Param4'];
-        plot2b = $.jqplot('chart2b', [[[2,1], [4,2], [6,3], [3,4]], [[5,1], [1,2], [3,3], [4,4]], [[4,1], [7,2], [1,3], [2,4]]], {
+        plot2b = $.jqplot('chart2b', [[2,3,4,5],[5,1,6,9], [4,2,3,4]], {
             seriesDefaults: {
                 renderer:$.jqplot.BarRenderer,
                 pointLabels: { show: true, location: 'e', edgeTolerance: -15 },
                 shadowAngle: 135,
                 rendererOptions: {
-                    barDirection: 'horizontal'
                 }
             },
             axes: {
-                yaxis: {
+                xaxis: {
                     renderer: $.jqplot.CategoryAxisRenderer,
                     ticks: ticks
                 }
@@ -57,7 +56,8 @@
             legend: {
                 show: true,
                 location: 'e',
-                placement: 'outside'
+                placement: 'outside',
+                labels:['Good','Very Good','Excellent','Not bad']
             }    
         });
     
