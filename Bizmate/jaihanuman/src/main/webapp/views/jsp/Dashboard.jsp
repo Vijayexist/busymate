@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="bizmate">
+<%@page import = "java.text.*" session="true"%>
 <%@page import = "java.util.*" session="true"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -37,6 +38,8 @@ color:brown;
         }
 
         session.setAttribute("counter", counter);
+        DateFormat dateFormat = new SimpleDateFormat("MMM dd yyyy HH:mm:ss");
+        String date= dateFormat.format(new Date(session.getLastAccessedTime()));
         %>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -51,7 +54,7 @@ color:brown;
     <div class="collapse navbar-collapse" id="loginHeader">
       <sec:authentication var="user" property="principal" />
       <ul class="nav navbar-nav navbar-right">
-        <li class="none"><a href="#"><span> <%= new Date(session.getLastAccessedTime())%> </span></a></li>
+        <li class="none"><a href="#"><span> <%= date%> </span></a></li>
         <li class="none"><a href="#"><span class="glyphicon glyphicon-user"></span> ${user}</a></li>
         <li class="none"><a href="<c:url value="j_spring_security_logout" />"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
@@ -74,6 +77,7 @@ color:brown;
         <li ><a href="#">CRM</a></li>
         <li><a href="#">Data Dump</a></li>
         <li><a href="#dataChart">Reports</a></li>
+        <li><a href="#loginTimeReports">Login Reports</a>
         </sec:authorize>
       </ul>
       

@@ -13,6 +13,9 @@
          .when('/dataChart',{
         	templateUrl:'dataChart'
         })
+        .when('/loginTimeReports',{
+        	templateUrl:'loginTimeReports'
+        })
             .when('/', {
                 templateUrl : 'views/jsp/TodaysReport.jsp',
                 controller:'queryListController'

@@ -14,6 +14,8 @@
 .glyphicon.glyphicon-plus {
     font-size:50px;
 }
+.glyphicon.glyphicon-info-sign{
+font-size:13px;}
 </style>
 
 </head>
@@ -69,22 +71,22 @@
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#service" class="chart-title" style="outline: none;display:block">TS
-							O9 BL 8289</a></li>
+							O9 BL 8289  <span style="color:red" class="glyphicon glyphicon-info-sign"></span></a></li>
 					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#service" class="chart-title" hidefocus="true"
-						style="outline: none;display:block">TS O9 BL 8289y</a></li>
-					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
+						style="outline: none;display:block">TS O9 BL 8289  <span style="color:red" class="glyphicon glyphicon-info-sign"></span></a></li>
+					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span  class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#service" class="chart-title" style="outline: none;display:block">TS
-							O9 BL 8289</a></li>
+							O9 BL 8289  <span style="color:orange" class="glyphicon glyphicon-info-sign"></span></a></li>
 					<li class="clearfix" onclick="location.href=$(this).children('a:first').attr('href');"><span class="position">&nbsp;</span>
 						<div class="chart-avatar">
 							<span class="glyphicon glyphicon-screenshot"></span>
 						</div> <a href="#service" class="chart-title" style="display:block">TS
-							O9 BL 8289</a></li>
+							O9 BL 8289  <span style="color:green" class="glyphicon glyphicon-info-sign"></a></li>
 				</ul>
 
 			</div>

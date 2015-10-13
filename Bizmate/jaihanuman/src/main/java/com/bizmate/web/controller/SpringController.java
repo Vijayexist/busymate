@@ -145,6 +145,10 @@ public class SpringController {
 		return model;
 		
 	}
+	@RequestMapping(value="/loginTimeReports", method = RequestMethod.GET)
+	private String loginTimeReports(){
+		return "loginReport";
+	}
 	
 	@RequestMapping(value="/postServiceRequest", method=RequestMethod.POST, consumes="application/json; charset=utf-8")
 	public @ResponseBody String postServiceDetails(@RequestParam("serviceDate") String serviceDate, @RequestParam("comments") String comments){
