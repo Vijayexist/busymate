@@ -60,8 +60,17 @@
 	        };
     });
     // create the controller and inject Angular's $scope
+    scotchApp.run(function ($rootScope) {
+
+        $rootScope.tabClick = function ($event) {
+            $event.preventDefault();
+        };
+
+    });
+    
     scotchApp.controller("ServiceController", ['$scope', '$http',  function($scope,$http){
     	$scope.list=[];
+    	 
     	$scope.submitService= function(){
     		var formData= {
     				"custId":"1",
@@ -143,7 +152,6 @@
     	
     	$scope.query={};
     	$scope.selected=$routeParams.index;
-    	alert($scope.selected);
     	if($scope.selected!=undefined)
     	$scope.query=shareProperty.getIndexedItem($scope.selected);
     	$scope.submitData=function()
@@ -153,7 +161,6 @@
     		shareProperty.setProperty($scope.query);
     		$location.path("/");
     	}
-    	alert($scope.query.rating);
     });
     scotchApp.controller('aboutController', function($scope) {
     	$scope.pageClass = 'page-home';

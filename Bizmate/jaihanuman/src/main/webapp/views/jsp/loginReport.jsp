@@ -3,12 +3,9 @@
 <%@page import = "java.util.*" session="true"%>
 <head></head>
 <body>
-<div class="col-md-6">
+
 
 <h4>Employees login details are as follows:</h4>
-</div>
-<div class="table-responsive">
-
 <% 
 /* Calendar cal = Calendar.getInstance();
 cal.set(Calendar.HOUR_OF_DAY, 0);
@@ -63,7 +60,6 @@ String dateOnly=dateFormat.format(date);   %>
 							</tr>
 						</tbody>
 					</table>
-					</div>
 					
 </body>
 </html>
